@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>playerDeath</name>
+    <events>
+        <event-group description="" sid="6346984043276694" title="Player death">
+            <sub-events>
+                <event-block sid="1948523939497488">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="874831633544605" type="player">
+                            <param id="0" name="Object">enemy01</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="351623569996780" type="System">
+                            <param id="0" name="Variable">shieldActive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3452010552818801" type="System">
+                            <param id="0" name="Variable">remindX</param>
+                            <param id="1" name="Value">player.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2306015771367642" type="System">
+                            <param id="0" name="Variable">remindY</param>
+                            <param id="1" name="Value">player.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2027076867042402" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="561556603729764" type="System">
+                            <param id="0" name="Object to create">playerExplosion</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2156706614081178" type="System">
+                            <param id="0" name="Object to create">boomAura</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action id="0" name="Play" sid="5571499109886119" type="Audio">
+                            <param id="0" name="Audio file">booom</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9843204587029415" type="player" />
+                        <action id="-9" name="Destroy" sid="8751806946340083" type="enemy01" />
+                        <action id="-11" name="Subtract from" sid="3137636594484928" type="System">
+                            <param id="0" name="Variable">lives</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="6" name="Stop" sid="305788413384927" type="Audio">
+                            <param id="0" name="Tag">&quot;music&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="756161109975965">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="115971940680810" type="System">
+                                    <param id="0" name="Object">powerup_bullettime</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="667799475821460" type="powerup_bullettime" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="381579787983441">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="614580838124003" type="System">
+                                    <param id="0" name="Object">powerup_shield</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="421152148934188" type="powerup_shield" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="576129284406533">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="221604678117759" type="System">
+                                    <param id="0" name="Object">powerup_emp</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="366208625853800" type="powerup_emp" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="1004726194764227">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="9324793357259725" type="System">
+                                    <param id="0" name="Object">bullet</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                                <condition id="-3" name="Is on-screen" sid="1843693333278217" type="bullet" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="9410294981235251" type="bullet" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="8084236071760505">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="7051815156995021" type="System">
+                                    <param id="0" name="Object">livesCounter</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="9117552961810686" type="livesCounter" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="1877158181618572">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8238333497398637" type="System">
+                                    <param id="0" name="Variable">lives</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="2479923276864199" type="System">
+                                    <param id="0" name="Name">&quot;livecounter&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">lives-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="444447176301207" type="System">
+                                    <param id="0" name="Object to create">livesCounter</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;overlay&quot;)</param>
+                                    <param id="2" name="X">LayoutWidth-(loopindex(&quot;livecounter&quot;)*45)-110</param>
+                                    <param id="3" name="Y">80</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6703257439964278">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="7935239248556018" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8989522532210207" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7433906452316891" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Value">deathTimeout-1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4701163428835094">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="322307262387828" type="System">
+                                    <param id="0" name="Variable">deathTimeout</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="814256425889585">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6599910836624836" type="System">
+                                            <param id="0" name="Variable">lives</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="276525636041819" type="System">
+                                            <param id="0" name="Variable">deathTimeout</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="4063251068861965" type="System">
+                                            <param id="0" name="Object to create">player</param>
+                                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                            <param id="2" name="X">remindX</param>
+                                            <param id="3" name="Y">remindY</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="6227993892289665" type="Audio">
+                                            <param id="0" name="Audio file">playerAppear</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-20</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="5590952171378911" type="Audio">
+                                            <param id="0" name="Audio file">gameloop</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">-30</param>
+                                            <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7432258499046871">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="6238182704698681" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="3828933669310861" type="System">
+                                            <param id="0" name="Layout">gameOverLayout</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

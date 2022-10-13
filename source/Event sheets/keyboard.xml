@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>keyboard</name>
+    <events>
+        <event-group description="" sid="669165631759423" title="WASD control">
+            <sub-events>
+                <comment>WASD control</comment>
+                <event-block sid="9275005752034491">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4962278174696408" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="277414497097484">
+                            <conditions>
+                                <condition id="9" name="Compare acceleration" sid="660769928343064" type="Touch">
+                                    <param id="0" name="Axis">4</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Acceleration">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="187031623778717" type="player">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="691729569716949">
+                            <conditions>
+                                <condition id="9" name="Compare acceleration" sid="572377027783108" type="Touch">
+                                    <param id="0" name="Axis">4</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Acceleration">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="291778827483833" type="player">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="801578319708805">
+                            <conditions>
+                                <condition id="9" name="Compare acceleration" sid="721839206532636" type="Touch">
+                                    <param id="0" name="Axis">3</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Acceleration">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="117426288254346" type="player">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="212586668268882">
+                            <conditions>
+                                <condition id="9" name="Compare acceleration" sid="696293452964361" type="Touch">
+                                    <param id="0" name="Axis">3</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Acceleration">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="157442783409574" type="player">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5694937858263265">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="7925525270637337" type="Keyboard">
+                                    <param id="0" name="Key">87 (W)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="7168078225249496" type="player">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8497820667554917">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="8286997096592059" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="3417537092683148" type="player">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9173455682267128">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="9763921908885508" type="Keyboard">
+                                    <param id="0" name="Key">83 (S)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="1461249729683771" type="player">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9270342512157476">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="2869463265532739" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="1560424461741423" type="player">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="298514443464655">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="108972525742561" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="990876632138002" type="System">
+                    <param id="0" name="Layout">mainMenuLayout</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

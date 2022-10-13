@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="1">gameLayout</layout>
+        <layout order="5">mainMenuLayout</layout>
+        <layout order="8">gameOverLayout</layout>
+        <event-sheet order="2">powerups</event-sheet>
+        <event-sheet order="3">gameSheet</event-sheet>
+        <event-sheet order="4">playerDeath</event-sheet>
+        <event-sheet active="1" order="6">mainMenuSheet</event-sheet>
+        <event-sheet order="7">introSheet</event-sheet>
+        <event-sheet order="9">keyboard</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="1" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/backgrounds/" />
+        <folder expanded="0" path="object-folder/fonts/" />
+        <folder expanded="0" path="object-folder/particles/" />
+        <folder expanded="0" path="object-folder/sprites/" />
+        <folder expanded="1" path="object-folder/sprites/mainMenu/" />
+        <folder expanded="1" path="object-folder/sprites/powerups/" />
+        <folder expanded="0" path="object-folder/sprites/powerups/emp/" />
+        <folder expanded="0" path="object-folder/sprites/powerups/shield/" />
+        <folder expanded="0" path="object-folder/sprites/powerups/bullettime/" />
+        <folder expanded="0" path="object-folder/handlers/" />
+        <folder expanded="0" path="object-folder/introstuff/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="event-folder/gameSubSheets/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="0" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="0" path="music-folder/endLayout/" />
+        <folder expanded="0" path="music-folder/gameLayout/" />
+        <folder expanded="0" path="music-folder/mainMenuLayout/" />
+        <folder expanded="1" path="animation-folder/subPlanet/" />
+        <folder expanded="1" path="animation-folder/mainmenuLogo/" />
+        <folder expanded="1" path="animation-folder/mainmenuExplanation/" />
+        <folder expanded="1" path="animation-folder/startButton/" />
+        <folder expanded="1" path="animation-folder/EMP/" />
+        <folder expanded="1" path="animation-folder/emp_starflare01/" />
+        <folder expanded="1" path="animation-folder/emp_starflare02/" />
+        <folder expanded="1" path="animation-folder/powerup_emp/" />
+        <folder expanded="1" path="animation-folder/empmarker/" />
+        <folder expanded="1" path="animation-folder/shield/" />
+        <folder expanded="1" path="animation-folder/shield_starflare01/" />
+        <folder expanded="1" path="animation-folder/shield_starflare02/" />
+        <folder expanded="1" path="animation-folder/powerup_shield/" />
+        <folder expanded="1" path="animation-folder/bullettime_starflare01/" />
+        <folder expanded="1" path="animation-folder/bullettime_starflare02/" />
+        <folder expanded="1" path="animation-folder/bullet/" />
+        <folder expanded="1" path="animation-folder/powerup_bullettime/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/enemy01/" />
+        <folder expanded="1" path="animation-folder/player/" />
+        <folder expanded="1" path="animation-folder/livesCounter/" />
+        <folder expanded="1" path="animation-folder/megaton/" />
+    </folders-expanded>
+</c2uistate>

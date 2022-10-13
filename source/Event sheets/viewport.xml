@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>viewport</name>
+    <events>
+        <event-group description="" sid="7259092421378023" title="Player viewport limitation">
+            <sub-events>
+                <comment>Player movement limitation</comment>
+                <event-block sid="9810712723745857">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="6525685738949613" type="player">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">player.Width/2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="4314566845083078" type="player">
+                            <param id="0" name="X">player.Width/2</param>
+                        </action>
+                        <action behavior="8Direction" id="9" name="Set vector X" sid="1479955725685914" type="player">
+                            <param id="0" name="Vector X">-(player.8Direction.VectorX)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2626845182897661">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="1506594234341692" type="player">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth-(player.Width/2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="2102837569911484" type="player">
+                            <param id="0" name="X">LayoutWidth-(player.Width/2)</param>
+                        </action>
+                        <action behavior="8Direction" id="9" name="Set vector X" sid="4282532103655968" type="player">
+                            <param id="0" name="Vector X">-(player.8Direction.VectorX)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3493442747403199">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="5071389507663011" type="player">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">player.Height/2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="3088796540891175" type="player">
+                            <param id="0" name="Y">player.Height/2</param>
+                        </action>
+                        <action behavior="8Direction" id="10" name="Set vector Y" sid="4273311652508069" type="player">
+                            <param id="0" name="Vector Y">-(player.8Direction.VectorY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3457377817132777">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="6147890567331443" type="player">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight-(player.Height/2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="3567143935199591" type="player">
+                            <param id="0" name="Y">LayoutHeight-(player.Height/2)</param>
+                        </action>
+                        <action behavior="8Direction" id="10" name="Set vector Y" sid="3768282255034679" type="player">
+                            <param id="0" name="Vector Y">-(player.8Direction.VectorY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

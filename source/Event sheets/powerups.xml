@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>powerups</name>
+    <events>
+        <event-group description="" sid="661445789111259" title="Create powerups">
+            <sub-events>
+                <event-block sid="241842084532029">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="859382733861262" type="System">
+                            <param id="0" name="Interval (seconds)">22</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="495284134003489" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="126007343142439" type="System">
+                            <param id="0" name="Object to create">powerup_bullettime</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">-150</param>
+                            <param id="3" name="Y">int(random(LayoutHeight-100))+50</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="554172291786278" type="bullettime_starflare01">
+                            <param id="0" name="Opacity">30</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="438947551339218" type="bullettime_starflare02">
+                            <param id="0" name="Opacity">30</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="729530036619926" type="bullettime_starflare01" />
+                        <action id="-25" name="Move to bottom" sid="708953968348847" type="bullettime_starflare02" />
+                    </actions>
+                </event-block>
+                <event-block sid="719551333352974">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="651956896178773" type="System">
+                            <param id="0" name="Interval (seconds)">18</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="159242913868283" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="827682188164831" type="System">
+                            <param id="0" name="Object to create">powerup_shield</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">LayoutWidth+150</param>
+                            <param id="3" name="Y">int(random(LayoutHeight-100))+50</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="126494753220223" type="shield_starflare01">
+                            <param id="0" name="Opacity">30</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="594276224784078" type="shield_starflare02">
+                            <param id="0" name="Opacity">30</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="535159582773376" type="shield_starflare01" />
+                        <action id="-25" name="Move to bottom" sid="570697497969559" type="shield_starflare02" />
+                    </actions>
+                </event-block>
+                <event-block sid="654111357178117">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="809421306647551" type="System">
+                            <param id="0" name="Interval (seconds)">26</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="152297691494820" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="489116011669662" type="System">
+                            <param id="0" name="Variable">empcount</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="229754234194587" type="System">
+                            <param id="0" name="Object to create">powerup_emp</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">int(random(LayoutWidth-200))+100</param>
+                            <param id="3" name="Y">LayoutHeight+150</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="518566659666142" type="emp_starflare01">
+                            <param id="0" name="Opacity">30</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="750168409625253" type="emp_starflare02">
+                            <param id="0" name="Opacity">30</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="854362596308832" type="emp_starflare01" />
+                        <action id="-25" name="Move to bottom" sid="183078804527953" type="emp_starflare02" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="940129645192435" title="Grab a powerup">
+            <sub-events>
+                <event-block sid="883748616829942">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="948963509111070" type="player">
+                            <param id="0" name="Object">powerup_bullettime</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="493531875352935" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="269014816492552" type="powerup_bullettime" />
+                        <action id="-9" name="Set value" sid="570178354122560" type="System">
+                            <param id="0" name="Variable">autoShooter</param>
+                            <param id="1" name="Value">360</param>
+                        </action>
+                        <action id="0" name="Play" sid="602412763952950" type="Audio">
+                            <param id="0" name="Audio file">terminate</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-7</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="892718433007735">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="625667308677745" type="player">
+                            <param id="0" name="Object">powerup_shield</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="673983946091341" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="690476749168700" type="powerup_shield" />
+                        <action id="-9" name="Set value" sid="353428819981940" type="System">
+                            <param id="0" name="Variable">autoShield</param>
+                            <param id="1" name="Value">430</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="984201149698556" type="System">
+                            <param id="0" name="Variable">shieldActive</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="590528446234724" type="System">
+                            <param id="0" name="Object to create">shield</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="339190083149219" type="shield">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="750287934005319" type="shield" />
+                        <action id="0" name="Play" sid="698451963340841" type="Audio">
+                            <param id="0" name="Audio file">pw_protect</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-7</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="421520409606679">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="391366249934019" type="player">
+                            <param id="0" name="Object">powerup_emp</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="638866175830348" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="930178161010425" type="powerup_emp" />
+                        <action id="-10" name="Add to" sid="943867007544650" type="System">
+                            <param id="0" name="Variable">empcount</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="247961266407645" type="System">
+                            <param id="0" name="Variable">shieldActive</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="947979432732545" type="System">
+                            <param id="0" name="Object to create">shield</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="916757833808504" type="shield">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="536852786550771" type="shield" />
+                        <action id="0" name="Play" sid="232708038206095" type="Audio">
+                            <param id="0" name="Audio file">megaton_power</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-7</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="789083129594631">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="972896786799369" type="System">
+                                    <param id="0" name="Object">empmarker</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="542861216536082" type="empmarker" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="793867873503271">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="791152427922003" type="System">
+                                    <param id="0" name="Variable">empcount</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="547926103248052" type="System">
+                                    <param id="0" name="Name">&quot;empcounter&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">empcount-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="610144075483806" type="System">
+                                    <param id="0" name="Object to create">empmarker</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;overlay&quot;)</param>
+                                    <param id="2" name="X">LayoutWidth-(loopindex(&quot;empcounter&quot;)*45)-110</param>
+                                    <param id="3" name="Y">220</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="465617490661986" title="Unused powerups">
+            <sub-events>
+                <event-block sid="719951061167461">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="105750314167155" type="powerup_bullettime">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth+150</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="710363599224213" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="128468713559869" type="powerup_bullettime" />
+                    </actions>
+                </event-block>
+                <event-block sid="163576250617554">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="552530131335282" type="powerup_shield">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-150</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="944390011825177" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="457395975489021" type="powerup_shield" />
+                    </actions>
+                </event-block>
+                <event-block sid="347959785385976">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="147306904852331" type="powerup_emp">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">-150</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="122076780699707" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="355145890314850" type="powerup_emp" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="759257723826840" title="Process shield powerup">
+            <sub-events>
+                <event-group description="" sid="970484024717207" title="Shield">
+                    <sub-events>
+                        <event-block sid="334914151170766">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="406898962960499" type="System">
+                                    <param id="0" name="Variable">autoShield</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="737558149532013" type="System">
+                                    <param id="0" name="Variable">shieldActive</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="920902997735610" type="System">
+                                    <param id="0" name="Variable">shieldActive</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="338821936376645" type="shield" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="300304430763375">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="333208661440586" type="System">
+                                    <param id="0" name="Variable">shieldActive</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="925094109357134" type="System">
+                                    <param id="0" name="Variable">autoShield</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">90</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="798546242391096">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="246283691231585" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="180829342823768" type="Audio">
+                                            <param id="0" name="Audio file">shieldbeep</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="624681283107854" type="System">
+                                            <param id="0" name="Variable">shieldblipper</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="602288159697415">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="879786596416080" type="System">
+                                                    <param id="0" name="Variable">shieldblipper</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="374268280580529" type="System">
+                                                    <param id="0" name="Variable">shieldblipper</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="334231296843652">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="558467484258674" type="System">
+                                                    <param id="0" name="Variable">shieldblipper</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="292032713160199" type="shield">
+                                                    <param id="0" name="Opacity">60</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="399129046471990">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="510938446413467" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="961081790428631" type="shield">
+                                                    <param id="0" name="Opacity">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="593900707225013" title="EMP">
+                    <sub-events>
+                        <event-block sid="703911011238247">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="261386678257045" type="Keyboard">
+                                    <param id="0" name="Key">81 (Q)</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="295767338708476" type="System">
+                                    <param id="0" name="Variable">megatonActive</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="469385351078463" type="System">
+                                    <param id="0" name="Variable">deathTimeout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="346959835342395" type="System">
+                                    <param id="0" name="Variable">empcount</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="840767886162413" type="System">
+                                    <param id="0" name="Object to create">megaton</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;playerParticles&quot;)</param>
+                                    <param id="2" name="X">player.X</param>
+                                    <param id="3" name="Y">player.Y</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="108054645335080" type="megaton">
+                                    <param id="0" name="Width">32</param>
+                                    <param id="1" name="Height">32</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="534856636072356" type="System">
+                                    <param id="0" name="Variable">megatonActive</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="760917135871210" type="System">
+                                    <param id="0" name="Variable">megatonLifecycle</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="932729790728583" type="Audio">
+                                    <param id="0" name="Audio file">subboom</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-15</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="987915886085410" type="System">
+                                    <param id="0" name="Variable">empcount</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="920147656877247">
+                                    <conditions>
+                                        <condition id="-24" name="For Each (ordered)" sid="385909035836011" type="System">
+                                            <param id="0" name="Object">empmarker</param>
+                                            <param id="1" name="Expression">0</param>
+                                            <param id="2" name="Order">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="635273655704957" type="empmarker" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="927950423019001">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="877037358479745" type="System">
+                                            <param id="0" name="Variable">empcount</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-10" name="For" sid="551744342516111" type="System">
+                                            <param id="0" name="Name">&quot;empcounter&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">empcount-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="849608335570456" type="System">
+                                            <param id="0" name="Object to create">empmarker</param>
+                                            <param id="1" name="Layer">LayerIndex(&quot;overlay&quot;)</param>
+                                            <param id="2" name="X">LayoutWidth-(loopindex(&quot;empcounter&quot;)*45)-110</param>
+                                            <param id="3" name="Y">220</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="552037848148157">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="181936915627690" type="System">
+                                    <param id="0" name="Variable">megatonActive</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-7" name="Set size" sid="628690391581266" type="megaton">
+                                    <param id="0" name="Width">self.Width+30</param>
+                                    <param id="1" name="Height">self.Height+30</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="230907465123938" type="megaton">
+                                    <param id="0" name="X">player.X</param>
+                                    <param id="1" name="Y">player.Y</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="710605877342973" type="System">
+                                    <param id="0" name="Variable">megatonLifecycle</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="812459596823493">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="196042915918938" type="System">
+                                    <param id="0" name="Variable">megatonLifecycle</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">110</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="463996653130630" type="megaton" />
+                                <action id="-9" name="Set value" sid="851798438891618" type="System">
+                                    <param id="0" name="Variable">megatonActive</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

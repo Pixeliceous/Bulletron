@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>enemies</name>
+    <events>
+        <event-group description="" sid="7229723982175561" title="Enemy spawning">
+            <sub-events>
+                <event-block sid="4066226143645955">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6999609053695153" type="System">
+                            <param id="0" name="Interval (seconds)">enemyInterval</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="638263960234658" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6823142154401018" type="System">
+                            <param id="0" name="Variable">enemyX</param>
+                            <param id="1" name="Value">int(random(LayoutWidth))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3121386227091258" type="System">
+                            <param id="0" name="Variable">enemyY</param>
+                            <param id="1" name="Value">int(random(LayoutHeight))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="570529030439798">
+                            <conditions>
+                                <condition id="-23" name="While" sid="8232430883420047" type="System" />
+                                <condition id="-14" name="Compare variable" sid="4556722042887198" type="System">
+                                    <param id="0" name="Variable">enemyX</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">player.X-enemyDistanceX</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="7004178538582692" type="System">
+                                    <param id="0" name="Variable">enemyX</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">player.X+enemyDistanceX</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="8161996264752053" type="System">
+                                    <param id="0" name="Variable">enemyY</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">player.Y-enemyDistanceY</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="2811888080571309" type="System">
+                                    <param id="0" name="Variable">enemyY</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">player.Y+enemyDistanceY</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2540833789751206" type="System">
+                                    <param id="0" name="Variable">enemyX</param>
+                                    <param id="1" name="Value">int(random(LayoutWidth))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8064455701790595" type="System">
+                                    <param id="0" name="Variable">enemyY</param>
+                                    <param id="1" name="Value">int(random(LayoutHeight))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7038710692893856">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="263772394411709" type="System">
+                                    <param id="0" name="Variable">megatonActive</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2029083990299927" type="System">
+                                    <param id="0" name="Object to create">enemy01</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">enemyX</param>
+                                    <param id="3" name="Y">enemyY</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="1779333456282387" type="System">
+                                    <param id="0" name="Object to create">enemyAppear</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;playerParticles&quot;)</param>
+                                    <param id="2" name="X">enemyX</param>
+                                    <param id="3" name="Y">enemyY</param>
+                                </action>
+                                <action id="24" name="Play at position" sid="8134204312596286" type="Audio">
+                                    <param id="0" name="Audio file">appear</param>
+                                    <param id="1" name="Loop">0</param>
+                                    <param id="2" name="Volume">-15</param>
+                                    <param id="3" name="X">enemy01.X</param>
+                                    <param id="4" name="Y">0</param>
+                                    <param id="5" name="Angle">0</param>
+                                    <param id="6" name="Inner angle">0</param>
+                                    <param id="7" name="Outer angle">360</param>
+                                    <param id="8" name="Outer gain">0</param>
+                                    <param id="9" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3247089866128843" type="enemy01">
+                                    <param id="0" name="Instance variable">speedVar</param>
+                                    <param id="1" name="Value">random(2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9468466602523746">
+                    <conditions>
+                        <condition id="-24" name="For Each (ordered)" sid="350459081666599" type="System">
+                            <param id="0" name="Object">enemy01</param>
+                            <param id="1" name="Expression">0</param>
+                            <param id="2" name="Order">0</param>
+                        </condition>
+                        <condition id="-3" name="Is on-screen" sid="9323454260178688" type="enemy01" />
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="9371164778128085" type="enemy01">
+                            <param id="0" name="X">player.X</param>
+                            <param id="1" name="Y">player.Y</param>
+                        </action>
+                        <action id="-17" name="Move forward" sid="4815794919713911" type="enemy01">
+                            <param id="0" name="Distance">enemySpeed + self.speedVar</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="876674898593469" type="enemy01">
+                            <param id="0" name="Instance variable">survivalCounter</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

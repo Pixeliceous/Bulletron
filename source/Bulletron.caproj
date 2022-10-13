@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Bulletron</name>
+    <description>Be the best space pilot by surviving the longest before going down!</description>
+    <version>1.3.4</version>
+    <author>Arjen Schumacher</author>
+    <author-email>arjen.schumacher@gmail.com</author-email>
+    <author-website>arjen.comli.com</author-website>
+    <app-id>com.comli.arjen</app-id>
+    <unique-id>1mbldlyktbuzm</unique-id>
+    <saved-with-version>23300</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="ScirraArcadeV4" version="1">Scirra Arcade</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>introLayout</first-layout>
+    <use-loader-layout>1</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">High quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="backgrounds">
+            <object-type name="starField1" sid="669490290153588">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\stars.png" />
+            </object-type>
+            <object-type name="gameBackground" sid="3062703636674585">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\background.png" />
+            </object-type>
+            <object-type name="starField2" sid="2187967186053779">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\stars.png" />
+            </object-type>
+            <object-type name="starField3" sid="7831183896159505">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\stars.png" />
+            </object-type>
+            <object-type name="planetBackground" sid="9703599354707101">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\planetlayer.png" />
+            </object-type>
+            <object-type name="mainMenu2" sid="4804506374895966">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\game_over.png" />
+            </object-type>
+            <object-type name="subPlanet" sid="813014573668878">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="405360724459781" speed="5">
+                        <frame duration="1" hotspotX="-1.11333" hotspotY="-1.33333" original-source="F:\projecten\construct2\Bulletron\files\small_planet.png">
+                            <collision-poly>
+                                <point x="0.166667" y="0.166667" />
+                                <point x="0.5" y="0.0233333" />
+                                <point x="0.845" y="0.155" />
+                                <point x="1" y="0.5" />
+                                <point x="0.856667" y="0.856667" />
+                                <point x="0.5" y="1" />
+                                <point x="0.155" y="0.845" />
+                                <point x="0.0233333" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="fonts">
+            <object-type name="scoreLabel" sid="2102602712234436">
+                <plugin id="Spritefont2" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\Future_Blu.png" />
+            </object-type>
+            <object-type name="scoreCounter" sid="2163560108806986">
+                <plugin id="Spritefont2" />
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <texture original-source="F:\projecten\construct2\Bulletron\files\Future_Blu.png" />
+            </object-type>
+            <object-type name="livesText" sid="8744703931907043">
+                <plugin id="Spritefont2" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\Future_Blu.png" />
+            </object-type>
+            <object-type name="gameOverText" sid="1056681548862027">
+                <plugin id="Spritefont2" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\Future_Blu.png" />
+            </object-type>
+            <object-type name="topScores" sid="939208377503819">
+                <plugin id="Spritefont2" />
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <texture original-source="F:\projecten\construct2\Bulletron\files\Future_Blu.png" />
+            </object-type>
+            <object-type name="megatonText" sid="978442064194811">
+                <plugin id="Spritefont2" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\Future_Blu.png" />
+            </object-type>
+        </object-folder>
+        <object-folder name="particles">
+            <object-type name="bulletExplosion" sid="3409483962022014">
+                <plugin id="Particles" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\particle.png" />
+            </object-type>
+            <object-type name="bulletExplosion2" sid="4804447790053251">
+                <plugin id="Particles" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\particle.png" />
+            </object-type>
+            <object-type name="bulletExplosion3" sid="1505447720320773">
+                <plugin id="Particles" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\particle.png" />
+            </object-type>
+            <object-type name="bulletExplosion4" sid="3041132773528708">
+                <plugin id="Particles" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\particle.png" />
+            </object-type>
+            <object-type name="bulletExplosion5" sid="8751540891584729">
+                <plugin id="Particles" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\particle.png" />
+            </object-type>
+            <object-type name="playerExplosion" sid="5641848882146895">
+                <plugin id="Particles" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\explosion.png" />
+            </object-type>
+            <object-type name="boomAura" sid="8665988294997382">
+                <plugin id="Particles" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\boomAura.png" />
+            </object-type>
+            <object-type name="enemyAppear" sid="1738320713919933">
+                <plugin id="Particles" />
+                <texture original-source="F:\projecten\construct2\Bulletron\files\enemyAppear.png" />
+            </object-type>
+        </object-folder>
+        <object-folder name="sprites">
+            <object-folder name="mainMenu">
+                <object-type name="mainmenuLogo" sid="820285260782903">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="sineWidth" sid="463010888089147">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                        <behavior-type name="sineHeight" sid="494999429009287">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                        <behavior-type name="sineAngle" sid="361353142366172">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="881917229696174" speed="5">
+                            <frame duration="1" hotspotX="0.500276" hotspotY="0.501754" original-source="F:\projecten\construct2\Bulletron\files\bulletron_logo.png">
+                                <collision-poly>
+                                    <point x="0.0945946" y="0.313008" />
+                                    <point x="0.5" y="0.235772" />
+                                    <point x="0.899263" y="0.333333" />
+                                    <point x="0.899263" y="0.666667" />
+                                    <point x="0.0995086" y="0.670732" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="mainmenuExplanation" sid="989311247311651">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="sineWidth" sid="767004620737218">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                        <behavior-type name="sineHeight" sid="730374096114296">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                        <behavior-type name="sineAngle" sid="929181699328474">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="160685638935499" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.505495" original-source="F:\projecten\construct2\Bulletron\files\wasd_keys.png">
+                                <collision-poly>
+                                    <point x="0.0435897" y="0.0729614" />
+                                    <point x="0.884615" y="0.193133" />
+                                    <point x="0.951282" y="0.918455" />
+                                    <point x="0.0487179" y="0.918455" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="mainMenu" sid="1811889851458187">
+                    <plugin id="TiledBg" />
+                    <texture original-source="F:\projecten\construct2\Bulletron\files\mainmenu_background.png" />
+                </object-type>
+                <object-type name="startButton" sid="767397875670334">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="367422940196795" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.506849" original-source="F:\projecten\construct2\Bulletron\files\startgame_button.png">
+                                <collision-poly>
+                                    <point x="0.011811" y="0.0410959" />
+                                    <point x="0.988189" y="0.0410959" />
+                                    <point x="0.984252" y="0.945205" />
+                                    <point x="0.015748" y="0.945205" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="powerups">
+                <object-folder name="emp">
+                    <object-type name="EMP" sid="184882858196824">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="24" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="136122992856916" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e01.png">
+                                    <collision-poly>
+                                        <point x="0.328125" y="0.328125" />
+                                        <point x="0.5" y="0.234375" />
+                                        <point x="0.6875" y="0.3125" />
+                                        <point x="0.765625" y="0.5" />
+                                        <point x="0.703125" y="0.703125" />
+                                        <point x="0.5" y="0.78125" />
+                                        <point x="0.3125" y="0.6875" />
+                                        <point x="0.234375" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e02.png">
+                                    <collision-poly>
+                                        <point x="0.296875" y="0.296875" />
+                                        <point x="0.5" y="0.203125" />
+                                        <point x="0.71875" y="0.28125" />
+                                        <point x="0.796875" y="0.5" />
+                                        <point x="0.75" y="0.75" />
+                                        <point x="0.5" y="0.828125" />
+                                        <point x="0.28125" y="0.71875" />
+                                        <point x="0.1875" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e03.png">
+                                    <collision-poly>
+                                        <point x="0.296875" y="0.296875" />
+                                        <point x="0.5" y="0.203125" />
+                                        <point x="0.71875" y="0.28125" />
+                                        <point x="0.796875" y="0.5" />
+                                        <point x="0.75" y="0.75" />
+                                        <point x="0.5" y="0.828125" />
+                                        <point x="0.28125" y="0.71875" />
+                                        <point x="0.1875" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e04.png">
+                                    <collision-poly>
+                                        <point x="0.265625" y="0.265625" />
+                                        <point x="0.5" y="0.125" />
+                                        <point x="0.765625" y="0.234375" />
+                                        <point x="0.859375" y="0.5" />
+                                        <point x="0.796875" y="0.796875" />
+                                        <point x="0.5" y="0.90625" />
+                                        <point x="0.234375" y="0.765625" />
+                                        <point x="0.125" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e05.png">
+                                    <collision-poly>
+                                        <point x="0.25" y="0.25" />
+                                        <point x="0.5" y="0.109375" />
+                                        <point x="0.765625" y="0.234375" />
+                                        <point x="0.875" y="0.5" />
+                                        <point x="0.8125" y="0.8125" />
+                                        <point x="0.5" y="0.9375" />
+                                        <point x="0.21875" y="0.78125" />
+                                        <point x="0.125" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e06.png">
+                                    <collision-poly>
+                                        <point x="0.234375" y="0.234375" />
+                                        <point x="0.5" y="0.078125" />
+                                        <point x="0.78125" y="0.21875" />
+                                        <point x="0.890625" y="0.5" />
+                                        <point x="0.8125" y="0.8125" />
+                                        <point x="0.5" y="0.953125" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.109375" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e07.png">
+                                    <collision-poly>
+                                        <point x="0.234375" y="0.234375" />
+                                        <point x="0.5" y="0.0625" />
+                                        <point x="0.78125" y="0.21875" />
+                                        <point x="0.890625" y="0.5" />
+                                        <point x="0.828125" y="0.828125" />
+                                        <point x="0.5" y="0.96875" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.09375" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e08.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.0625" />
+                                        <point x="0.796875" y="0.203125" />
+                                        <point x="0.890625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="0.984375" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.09375" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e09.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.0625" />
+                                        <point x="0.796875" y="0.203125" />
+                                        <point x="0.90625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="0.984375" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.078125" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e10.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.0625" />
+                                        <point x="0.8125" y="0.1875" />
+                                        <point x="0.90625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="0.984375" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.0625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e11.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.046875" />
+                                        <point x="0.8125" y="0.1875" />
+                                        <point x="0.890625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="0.984375" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.0625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e12.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.046875" />
+                                        <point x="0.8125" y="0.1875" />
+                                        <point x="0.890625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.0625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e13.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.046875" />
+                                        <point x="0.8125" y="0.1875" />
+                                        <point x="0.90625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.0625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e14.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.046875" />
+                                        <point x="0.8125" y="0.1875" />
+                                        <point x="0.90625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="0.984375" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.0625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e15.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.078125" />
+                                        <point x="0.8125" y="0.1875" />
+                                        <point x="0.90625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="0.984375" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.078125" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e16.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.078125" />
+                                        <point x="0.8125" y="0.1875" />
+                                        <point x="0.90625" y="0.5" />
+                                        <point x="0.84375" y="0.84375" />
+                                        <point x="0.5" y="0.984375" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.078125" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e17.png">
+                                    <collision-poly>
+                                        <point x="0.21875" y="0.21875" />
+                                        <point x="0.5" y="0.078125" />
+                                        <point x="0.78125" y="0.21875" />
+                                        <point x="0.90625" y="0.5" />
+                                        <point x="0.8125" y="0.8125" />
+                                        <point x="0.5" y="0.953125" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.09375" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e18.png">
+                                    <collision-poly>
+                                        <point x="0.28125" y="0.28125" />
+                                        <point x="0.5" y="0.078125" />
+                                        <point x="0.78125" y="0.21875" />
+                                        <point x="0.890625" y="0.5" />
+                                        <point x="0.8125" y="0.8125" />
+                                        <point x="0.5" y="0.9375" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.09375" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e19.png">
+                                    <collision-poly>
+                                        <point x="0.3125" y="0.3125" />
+                                        <point x="0.5" y="0.140625" />
+                                        <point x="0.78125" y="0.21875" />
+                                        <point x="0.890625" y="0.5" />
+                                        <point x="0.796875" y="0.796875" />
+                                        <point x="0.5" y="0.921875" />
+                                        <point x="0.203125" y="0.796875" />
+                                        <point x="0.140625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e20.png">
+                                    <collision-poly>
+                                        <point x="0.3125" y="0.3125" />
+                                        <point x="0.5" y="0.15625" />
+                                        <point x="0.734375" y="0.265625" />
+                                        <point x="0.875" y="0.5" />
+                                        <point x="0.796875" y="0.796875" />
+                                        <point x="0.5" y="0.890625" />
+                                        <point x="0.234375" y="0.765625" />
+                                        <point x="0.15625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e21.png">
+                                    <collision-poly>
+                                        <point x="0.328125" y="0.328125" />
+                                        <point x="0.5" y="0.21875" />
+                                        <point x="0.734375" y="0.265625" />
+                                        <point x="0.875" y="0.5" />
+                                        <point x="0.78125" y="0.78125" />
+                                        <point x="0.5" y="0.84375" />
+                                        <point x="0.234375" y="0.765625" />
+                                        <point x="0.171875" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e22.png">
+                                    <collision-poly>
+                                        <point x="0.34375" y="0.34375" />
+                                        <point x="0.5" y="0.3125" />
+                                        <point x="0.625" y="0.375" />
+                                        <point x="0.796875" y="0.5" />
+                                        <point x="0.78125" y="0.78125" />
+                                        <point x="0.5" y="0.8125" />
+                                        <point x="0.296875" y="0.703125" />
+                                        <point x="0.265625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Tunnelscout\files\explosion anim frames\e23.png">
+                                    <collision-poly>
+                                        <point x="0.390625" y="0.390625" />
+                                        <point x="0.5" y="0.375" />
+                                        <point x="0.609375" y="0.390625" />
+                                        <point x="0.703125" y="0.5" />
+                                        <point x="0.640625" y="0.640625" />
+                                        <point x="0.5" y="0.671875" />
+                                        <point x="0.375" y="0.625" />
+                                        <point x="0.296875" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="emp_starflare01" sid="639009304971591">
+                        <plugin id="Sprite" />
+                        <container>
+                            <type>powerup_emp</type>
+                            <type>emp_starflare01</type>
+                            <type>emp_starflare02</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="453635378869439" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup_effect.png">
+                                    <collision-poly>
+                                        <point x="0.314286" y="0.314286" />
+                                        <point x="0.5" y="0.233333" />
+                                        <point x="0.67381" y="0.32619" />
+                                        <point x="0.728571" y="0.5" />
+                                        <point x="0.685714" y="0.685714" />
+                                        <point x="0.5" y="0.752381" />
+                                        <point x="0.3" y="0.7" />
+                                        <point x="0.211905" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="emp_starflare02" sid="920211041419164">
+                        <plugin id="Sprite" />
+                        <container>
+                            <type>powerup_emp</type>
+                            <type>emp_starflare01</type>
+                            <type>emp_starflare02</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="226115407574104" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup_effect.png">
+                                    <collision-poly>
+                                        <point x="0.685714" y="0.685714" />
+                                        <point x="0.5" y="0.766667" />
+                                        <point x="0.32619" y="0.67381" />
+                                        <point x="0.271429" y="0.5" />
+                                        <point x="0.314286" y="0.314286" />
+                                        <point x="0.5" y="0.247619" />
+                                        <point x="0.7" y="0.3" />
+                                        <point x="0.788095" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="powerup_emp" sid="340708020446601">
+                        <plugin id="Sprite" />
+                        <container>
+                            <type>powerup_emp</type>
+                            <type>emp_starflare01</type>
+                            <type>emp_starflare02</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="103711550367969" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup_emp.png">
+                                    <collision-poly>
+                                        <point x="0.09375" y="0.09375" />
+                                        <point x="0.5" y="0.03125" />
+                                        <point x="0.90625" y="0.09375" />
+                                        <point x="0.96875" y="0.5" />
+                                        <point x="0.90625" y="0.90625" />
+                                        <point x="0.5" y="0.96875" />
+                                        <point x="0.09375" y="0.90625" />
+                                        <point x="0.03125" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="empmarker" sid="330303209361173">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="717245082327450" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\empcounter.png">
+                                    <collision-poly>
+                                        <point x="0.173077" y="0.173077" />
+                                        <point x="0.5" y="0.0384615" />
+                                        <point x="0.826923" y="0.173077" />
+                                        <point x="0.965385" y="0.5" />
+                                        <point x="0.828846" y="0.828846" />
+                                        <point x="0.5" y="0.965385" />
+                                        <point x="0.171154" y="0.828846" />
+                                        <point x="0.0365385" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
+                <object-folder name="shield">
+                    <object-type name="shield" sid="364475557127793">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="332738905626151" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\shield.png">
+                                    <collision-poly>
+                                        <point x="0.171875" y="0.171875" />
+                                        <point x="0.5" y="0.03125" />
+                                        <point x="0.828125" y="0.171875" />
+                                        <point x="0.960938" y="0.5" />
+                                        <point x="0.820313" y="0.820313" />
+                                        <point x="0.5" y="0.953125" />
+                                        <point x="0.179688" y="0.820313" />
+                                        <point x="0.0390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="shield_starflare01" sid="425524689118725">
+                        <plugin id="Sprite" />
+                        <container>
+                            <type>powerup_shield</type>
+                            <type>shield_starflare01</type>
+                            <type>shield_starflare02</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="688762791655081" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup_effect.png">
+                                    <collision-poly>
+                                        <point x="0.314286" y="0.314286" />
+                                        <point x="0.5" y="0.233333" />
+                                        <point x="0.67381" y="0.32619" />
+                                        <point x="0.728571" y="0.5" />
+                                        <point x="0.685714" y="0.685714" />
+                                        <point x="0.5" y="0.752381" />
+                                        <point x="0.3" y="0.7" />
+                                        <point x="0.211905" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="shield_starflare02" sid="276827501071542">
+                        <plugin id="Sprite" />
+                        <container>
+                            <type>powerup_shield</type>
+                            <type>shield_starflare01</type>
+                            <type>shield_starflare02</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="748669201374333" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup_effect.png">
+                                    <collision-poly>
+                                        <point x="0.685714" y="0.685714" />
+                                        <point x="0.5" y="0.766667" />
+                                        <point x="0.32619" y="0.67381" />
+                                        <point x="0.271429" y="0.5" />
+                                        <point x="0.314286" y="0.314286" />
+                                        <point x="0.5" y="0.247619" />
+                                        <point x="0.7" y="0.3" />
+                                        <point x="0.788095" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="powerup_shield" sid="741974113298610">
+                        <plugin id="Sprite" />
+                        <container>
+                            <type>powerup_shield</type>
+                            <type>shield_starflare01</type>
+                            <type>shield_starflare02</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="221138188946139" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup_shield.png">
+                                    <collision-poly>
+                                        <point x="0.09375" y="0.09375" />
+                                        <point x="0.5" y="0.03125" />
+                                        <point x="0.90625" y="0.09375" />
+                                        <point x="0.96875" y="0.5" />
+                                        <point x="0.90625" y="0.90625" />
+                                        <point x="0.5" y="0.96875" />
+                                        <point x="0.09375" y="0.90625" />
+                                        <point x="0.03125" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
+                <object-folder name="bullettime">
+                    <object-type name="bullettime_starflare01" sid="185800896735065">
+                        <plugin id="Sprite" />
+                        <container>
+                            <type>powerup_bullettime</type>
+                            <type>bullettime_starflare02</type>
+                            <type>bullettime_starflare01</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="595280973721209" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup_effect.png">
+                                    <collision-poly>
+                                        <point x="0.314286" y="0.314286" />
+                                        <point x="0.5" y="0.233333" />
+                                        <point x="0.67381" y="0.32619" />
+                                        <point x="0.728571" y="0.5" />
+                                        <point x="0.685714" y="0.685714" />
+                                        <point x="0.5" y="0.752381" />
+                                        <point x="0.3" y="0.7" />
+                                        <point x="0.211905" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="bullettime_starflare02" sid="935411953613693">
+                        <plugin id="Sprite" />
+                        <container>
+                            <type>powerup_bullettime</type>
+                            <type>bullettime_starflare02</type>
+                            <type>bullettime_starflare01</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="776405622410020" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup_effect.png">
+                                    <collision-poly>
+                                        <point x="0.685714" y="0.685714" />
+                                        <point x="0.5" y="0.766667" />
+                                        <point x="0.32619" y="0.67381" />
+                                        <point x="0.271429" y="0.5" />
+                                        <point x="0.314286" y="0.314286" />
+                                        <point x="0.5" y="0.247619" />
+                                        <point x="0.7" y="0.3" />
+                                        <point x="0.788095" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="bullet" sid="1051053478152395">
+                        <plugin id="Sprite" />
+                        <instance-variables>
+                            <instance-variable name="direction" sid="365904340475537" type="number" />
+                        </instance-variables>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="318711517769305" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\bullet.png">
+                                    <collision-poly>
+                                        <point x="1" y="0.5" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0" y="0.5" />
+                                        <point x="0.5" y="0" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="powerup_bullettime" sid="984991231111936">
+                        <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Sine" sid="593936602865231">
+                                <behavior id="Sin" />
+                            </behavior-type>
+                        </behaviors>
+                        <container>
+                            <type>powerup_bullettime</type>
+                            <type>bullettime_starflare02</type>
+                            <type>bullettime_starflare01</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="398361338743899" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\powerup.png">
+                                    <collision-poly>
+                                        <point x="0.09375" y="0.09375" />
+                                        <point x="0.5" y="0.03125" />
+                                        <point x="0.90625" y="0.09375" />
+                                        <point x="0.96875" y="0.5" />
+                                        <point x="0.90625" y="0.90625" />
+                                        <point x="0.5" y="0.96875" />
+                                        <point x="0.09375" y="0.90625" />
+                                        <point x="0.03125" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
+                <object-type name="Sprite2" sid="290965962402464">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="793454182113897" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite3" sid="407410858122773">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="360380369266782" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-type name="enemy01" sid="6956176271312252">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="speedVar" sid="5525042427001569" type="number" />
+                    <instance-variable name="survivalCounter" sid="800752558754174" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="8Direction" sid="4914046241822103">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5859106401324283" speed="5">
+                        <frame duration="1" hotspotX="0.484375" hotspotY="0.501953" original-source="F:\projecten\construct2\Bulletron\files\enemy01.png">
+                            <collision-poly>
+                                <point x="0.177734" y="0.177734" />
+                                <point x="0.5" y="0.0292969" />
+                                <point x="0.917969" y="0.0820313" />
+                                <point x="0.939453" y="0.5" />
+                                <point x="0.917969" y="0.917969" />
+                                <point x="0.5" y="0.970703" />
+                                <point x="0.177734" y="0.822266" />
+                                <point x="0.0585938" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="player" sid="7336856047287517">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="8Direction" sid="9231004717109591">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="323023868027323" speed="5">
+                        <frame duration="1" hotspotX="0.503185" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\spaceship.png">
+                            <collision-poly>
+                                <point x="0.292994" y="0.291139" />
+                                <point x="0.496815" y="0.00632911" />
+                                <point x="0.707006" y="0.291139" />
+                                <point x="0.993631" y="0.5" />
+                                <point x="0.707006" y="0.708861" />
+                                <point x="0.496815" y="0.993671" />
+                                <point x="0.299363" y="0.702532" />
+                                <point x="0.00636943" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="livesCounter" sid="1108352491925794">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5822439413924834" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503185" original-source="F:\projecten\construct2\Bulletron\files\spaceship.png">
+                            <collision-poly>
+                                <point x="0.125" y="0.875" />
+                                <point x="0.0625" y="0.5" />
+                                <point x="0.125" y="0.125" />
+                                <point x="0.5" y="0.125" />
+                                <point x="0.8125" y="0.1875" />
+                                <point x="0.8125" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.5" y="0.875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="handlers">
+            <object-type name="Keyboard" sid="3449922982163108">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="ScirraArcade" sid="4730724834146499">
+                <plugin id="ScirraArcadeV4" />
+            </object-type>
+            <object-type name="Touch" sid="990146987037176">
+                <plugin id="Touch" />
+            </object-type>
+            <object-type name="Mouse" sid="931751240607551">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="AJAX" sid="981950352527329">
+                <plugin id="AJAX" />
+            </object-type>
+        </object-folder>
+        <object-folder name="introstuff">
+            <object-type name="urlLayer" sid="233600474209559">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\intro\hardmoon_background.png" />
+            </object-type>
+            <object-type name="gamesLayer" sid="450310526818858">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\intro\games_layer.png" />
+            </object-type>
+            <object-type name="hardmoonLayer" sid="607262499698973">
+                <plugin id="TiledBg" />
+                <texture original-source="F:\projecten\construct2\intro\hardmoon_layer.png" />
+            </object-type>
+        </object-folder>
+        <object-type name="debug" sid="5034524207598457">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Audio" sid="8840892225796">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Browser" sid="379870735366367">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="megaton" sid="584312585507250">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="894491935271181" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="F:\projecten\construct2\Bulletron\files\megaton.png">
+                        <collision-poly>
+                            <point x="0.167969" y="0.167969" />
+                            <point x="0.5" y="0.03125" />
+                            <point x="0.832031" y="0.167969" />
+                            <point x="0.972656" y="0.5" />
+                            <point x="0.833984" y="0.833984" />
+                            <point x="0.5" y="0.972656" />
+                            <point x="0.166016" y="0.833984" />
+                            <point x="0.0292969" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>gameLayout.xml</layout>
+        <layout>mainMenuLayout.xml</layout>
+        <layout>gameOverLayout.xml</layout>
+        <layout>introLayout.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-folder name="gameSubSheets">
+            <event-sheet>bullets.xml</event-sheet>
+            <event-sheet>keyboard.xml</event-sheet>
+            <event-sheet>playerDeath.xml</event-sheet>
+            <event-sheet>enemies.xml</event-sheet>
+            <event-sheet>viewport.xml</event-sheet>
+            <event-sheet>powerups.xml</event-sheet>
+        </event-folder>
+        <event-sheet>gameSheet.xml</event-sheet>
+        <event-sheet>mainMenuSheet.xml</event-sheet>
+        <event-sheet>gameOverSheet.xml</event-sheet>
+        <event-sheet>introSheet.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="3" />
+        <global-instance type="Audio" uid="5">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="ScirraArcade" uid="27" />
+        <global-instance type="Touch" uid="28">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="36" />
+        <global-instance type="AJAX" uid="37" />
+        <global-instance type="Browser" uid="48" />
+    </global-instances>
+    <sounds-folder>
+        <file name="explosion.m4a" />
+        <file name="explosion.ogg" />
+        <file name="appear.m4a" />
+        <file name="appear.ogg" />
+        <file name="playerexplosion.m4a" />
+        <file name="playerexplosion.ogg" />
+        <file name="playerAppear.m4a" />
+        <file name="playerAppear.ogg" />
+        <file name="booom.m4a" />
+        <file name="booom.ogg" />
+        <file name="Laser_Shoot01.m4a" />
+        <file name="Laser_Shoot01.ogg" />
+        <file name="Laser_Shoot02.m4a" />
+        <file name="Laser_Shoot02.ogg" />
+        <file name="Laser_Shoot03.m4a" />
+        <file name="Laser_Shoot03.ogg" />
+        <file name="Laser_Shoot04.m4a" />
+        <file name="Laser_Shoot04.ogg" />
+        <file name="Laser_Shoot05.m4a" />
+        <file name="Laser_Shoot05.ogg" />
+        <file name="music.m4a" />
+        <file name="music.ogg" />
+        <file name="shieldbeep.m4a" />
+        <file name="shieldbeep.ogg" />
+        <file name="pw_protect.m4a" />
+        <file name="pw_protect.ogg" />
+        <file name="terminate.m4a" />
+        <file name="terminate.ogg" />
+        <file name="subboom.m4a" />
+        <file name="subboom.ogg" />
+        <file name="megaton_power.m4a" />
+        <file name="megaton_power.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <music-folder name="endLayout">
+            <file name="endgame.m4a" />
+            <file name="endgame.ogg" />
+        </music-folder>
+        <music-folder name="gameLayout">
+            <file name="gameloop.m4a" />
+            <file name="gameloop.ogg" />
+        </music-folder>
+        <music-folder name="mainMenuLayout">
+            <file name="mainmenu.ogg" />
+            <file name="mainmenu.m4a" />
+        </music-folder>
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>bullets</name>
+    <events>
+        <event-group description="" sid="1856477023706702" title="Shoot bullets">
+            <sub-events>
+                <event-block sid="582228804911869">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="833776756170029" type="System">
+                            <param id="0" name="Variable">autoShooter</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="710388690123265" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="665968454035334">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="781952287724299" type="System">
+                                    <param id="0" name="Interval (seconds)">0.07</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="721688519260085" type="System">
+                                    <param id="0" name="Object to create">bullet</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">player.X</param>
+                                    <param id="3" name="Y">player.Y</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="389316384736660" type="bullet">
+                                    <param id="0" name="Angle">player.Angle+90</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="738702822804692" type="bullet">
+                                    <param id="0" name="Distance">player.Height/2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="314330713195919" type="System">
+                                    <param id="0" name="Object to create">bullet</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">player.X</param>
+                                    <param id="3" name="Y">player.Y</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="665525615752367" type="bullet">
+                                    <param id="0" name="Angle">player.Angle</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="249412833774393" type="bullet">
+                                    <param id="0" name="Distance">player.Width/2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="241751430531544" type="System">
+                                    <param id="0" name="Object to create">bullet</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">player.X</param>
+                                    <param id="3" name="Y">player.Y</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="998750838726428" type="bullet">
+                                    <param id="0" name="Angle">player.Angle+270</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="568825595806161" type="bullet">
+                                    <param id="0" name="Distance">(player.Height/2)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="695855066981333" type="System">
+                                    <param id="0" name="Object to create">bullet</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">player.X</param>
+                                    <param id="3" name="Y">player.Y</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="414129306495211" type="bullet">
+                                    <param id="0" name="Angle">player.Angle-180</param>
+                                </action>
+                                <action id="-17" name="Move forward" sid="630612601246402" type="bullet">
+                                    <param id="0" name="Distance">player.Width/2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="167808213757893" type="System">
+                                    <param id="0" name="Variable">shootSound</param>
+                                    <param id="1" name="Value">int(random(5))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="305242255918539">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="188520488652629" type="System">
+                                            <param id="0" name="Variable">shootSound</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="259106777319042" type="Audio">
+                                            <param id="0" name="Audio file">Laser_Shoot01</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="340935536255954">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="765680797637301" type="System">
+                                            <param id="0" name="Variable">shootSound</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="188780557261335" type="Audio">
+                                            <param id="0" name="Audio file">Laser_Shoot02</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="575120682054628">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="632608555619057" type="System">
+                                            <param id="0" name="Variable">shootSound</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="735753293917055" type="Audio">
+                                            <param id="0" name="Audio file">Laser_Shoot03</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="913794885946369">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="195808853930699" type="System">
+                                            <param id="0" name="Variable">shootSound</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="474784020039385" type="Audio">
+                                            <param id="0" name="Audio file">Laser_Shoot04</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="987798859041444">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="758888536325970" type="System">
+                                            <param id="0" name="Variable">shootSound</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="957318351374287" type="Audio">
+                                            <param id="0" name="Audio file">Laser_Shoot05</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="185902298443653">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="9466384382427318" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9506228138381512" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7887152138995607" type="System">
+                            <param id="0" name="Object to create">bullet</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8927829638882017" type="bullet">
+                            <param id="0" name="Angle">player.Angle+90</param>
+                        </action>
+                        <action id="-17" name="Move forward" sid="7360171761500121" type="bullet">
+                            <param id="0" name="Distance">player.Height/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4961238737383797" type="System">
+                            <param id="0" name="Object to create">bullet</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="4873881231408955" type="bullet">
+                            <param id="0" name="Angle">player.Angle</param>
+                        </action>
+                        <action id="-17" name="Move forward" sid="7072030730521823" type="bullet">
+                            <param id="0" name="Distance">player.Width/2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9066147722904954" type="System">
+                            <param id="0" name="Object to create">bullet</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="1645421428784215" type="bullet">
+                            <param id="0" name="Angle">player.Angle+270</param>
+                        </action>
+                        <action id="-17" name="Move forward" sid="5425606069309269" type="bullet">
+                            <param id="0" name="Distance">(player.Height/2)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8949021712617525" type="System">
+                            <param id="0" name="Object to create">bullet</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8539831815023715" type="bullet">
+                            <param id="0" name="Angle">player.Angle-180</param>
+                        </action>
+                        <action id="-17" name="Move forward" sid="5377974891282064" type="bullet">
+                            <param id="0" name="Distance">player.Width/2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3294400626384715" type="System">
+                            <param id="0" name="Variable">shootSound</param>
+                            <param id="1" name="Value">int(random(5))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3482454408967181">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9380119202506183" type="System">
+                                    <param id="0" name="Variable">shootSound</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="5152318662025016" type="Audio">
+                                    <param id="0" name="Audio file">Laser_Shoot01</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4056317422270108">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7902073184905024" type="System">
+                                    <param id="0" name="Variable">shootSound</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="6084285108035401" type="Audio">
+                                    <param id="0" name="Audio file">Laser_Shoot02</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7018775977866572">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3827461368249533" type="System">
+                                    <param id="0" name="Variable">shootSound</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="8435677176531593" type="Audio">
+                                    <param id="0" name="Audio file">Laser_Shoot03</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7248267030282507">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5751974268404573" type="System">
+                                    <param id="0" name="Variable">shootSound</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="5482480668671259" type="Audio">
+                                    <param id="0" name="Audio file">Laser_Shoot04</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8044642233069302">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2353317641145619" type="System">
+                                    <param id="0" name="Variable">shootSound</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="2073814197255916" type="Audio">
+                                    <param id="0" name="Audio file">Laser_Shoot05</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="733010486467783">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="351329816111907" type="player">
+                            <param id="0" name="Object">enemy01</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="376699504031751" type="System">
+                            <param id="0" name="Variable">shieldActive</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="252965534425867" type="Audio">
+                            <param id="0" name="Audio file">explosion</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-25</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="956156372200673" type="System">
+                            <param id="0" name="Variable">enemyInterval</param>
+                            <param id="1" name="Value">(enemyInterval/150)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="971178595202741" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">10+floor(score/50)+enemy01.survivalCounter*5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="361525375582171" type="System">
+                            <param id="0" name="Variable">explosionPicker</param>
+                            <param id="1" name="Value">int(random(5))</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="916179707321997" type="System">
+                            <param id="0" name="Object to create">EMP</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">enemy01.X</param>
+                            <param id="3" name="Y">enemy01.Y</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="539742200717165" type="EMP">
+                            <param id="0" name="Speed">22+int(random(40))</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="591125562116738" type="EMP">
+                            <param id="0" name="Scale">1+random(2)</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="722672452607123" type="EMP">
+                            <param id="0" name="Angle">int(random(360))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="684371328088901">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="226355857693088" type="System">
+                                    <param id="0" name="Variable">explosionPicker</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="381897670865768" type="System">
+                                    <param id="0" name="Object to create">bulletExplosion</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">enemy01.X</param>
+                                    <param id="3" name="Y">enemy01.Y</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="470698834138004" type="enemy01" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="654090464081555">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="212993606399883" type="System">
+                                    <param id="0" name="Variable">explosionPicker</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="131695148190153" type="System">
+                                    <param id="0" name="Object to create">bulletExplosion2</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">enemy01.X</param>
+                                    <param id="3" name="Y">enemy01.Y</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="288718894927949" type="enemy01" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="970369117051307">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="188185150293423" type="System">
+                                    <param id="0" name="Variable">explosionPicker</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="408108544506195" type="System">
+                                    <param id="0" name="Object to create">bulletExplosion3</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">enemy01.X</param>
+                                    <param id="3" name="Y">enemy01.Y</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="973767132278718" type="enemy01" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="285728793083975">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="656381804506237" type="System">
+                                    <param id="0" name="Variable">explosionPicker</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="457329784535539" type="System">
+                                    <param id="0" name="Object to create">bulletExplosion4</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">enemy01.X</param>
+                                    <param id="3" name="Y">enemy01.Y</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="847289389682284" type="enemy01" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="840724092210530">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="382203027960521" type="System">
+                                    <param id="0" name="Variable">explosionPicker</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="755660660102860" type="System">
+                                    <param id="0" name="Object to create">bulletExplosion5</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">enemy01.X</param>
+                                    <param id="3" name="Y">enemy01.Y</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="307292004671142" type="enemy01" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3122704036620871">
+                    <conditions>
+                        <condition id="-24" name="For Each (ordered)" sid="3343546562663404" type="System">
+                            <param id="0" name="Object">bullet</param>
+                            <param id="1" name="Expression">0</param>
+                            <param id="2" name="Order">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="8560441683277298" type="bullet">
+                            <param id="0" name="Distance">bulletSpeed</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9819893491371898">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="6877723138453932" type="bullet">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">LayoutWidth+bullet.Width</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="8111598608051474" type="bullet" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="3090262973697204">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="157784793927792" type="bullet">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">-(bullet.Width)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="7518810632016867" type="bullet" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="9529617837891616">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="2662318041706025" type="bullet">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">-(bullet.Height)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="1651000191407405" type="bullet" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="1782927497276355">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="2180041579644856" type="bullet">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">LayoutHeight+bullet.Height</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="4292313933621683" type="bullet" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="686802757199581">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="8732451340427898" type="bullet">
+                                    <param id="0" name="Object">enemy01</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="5877609963207478" type="Audio">
+                                    <param id="0" name="Audio file">explosion</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="9132877358576226" type="System">
+                                    <param id="0" name="Variable">enemyInterval</param>
+                                    <param id="1" name="Value">(enemyInterval/150)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="7648186168240957" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Value">10+floor(score/50)+enemy01.survivalCounter*5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="3198571288097181" type="System">
+                                    <param id="0" name="Variable">explosionPicker</param>
+                                    <param id="1" name="Value">int(random(5))</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="804821815172454" type="System">
+                                    <param id="0" name="Object to create">EMP</param>
+                                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                    <param id="2" name="X">enemy01.X</param>
+                                    <param id="3" name="Y">enemy01.Y</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="670317114197512" type="EMP">
+                                    <param id="0" name="Speed">22+int(random(40))</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="645356520084315" type="EMP">
+                                    <param id="0" name="Scale">1+random(2)</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="437847161348497" type="EMP">
+                                    <param id="0" name="Angle">int(random(360))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4601735807176847">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="2929036132179932" type="System">
+                                            <param id="0" name="Variable">explosionPicker</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="1516064380715283" type="System">
+                                            <param id="0" name="Object to create">bulletExplosion</param>
+                                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                            <param id="2" name="X">bullet.X</param>
+                                            <param id="3" name="Y">bullet.Y</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="7090394651080754" type="enemy01" />
+                                        <action id="-9" name="Destroy" sid="6659006693664856" type="bullet" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6638277649317979">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="40028296050988" type="System">
+                                            <param id="0" name="Variable">explosionPicker</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="4784108829615263" type="System">
+                                            <param id="0" name="Object to create">bulletExplosion2</param>
+                                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                            <param id="2" name="X">bullet.X</param>
+                                            <param id="3" name="Y">bullet.Y</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="2162760071073455" type="enemy01" />
+                                        <action id="-9" name="Destroy" sid="101612290079838" type="bullet" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1977175315595283">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="1169890750514862" type="System">
+                                            <param id="0" name="Variable">explosionPicker</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="2494478852412898" type="System">
+                                            <param id="0" name="Object to create">bulletExplosion3</param>
+                                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                            <param id="2" name="X">bullet.X</param>
+                                            <param id="3" name="Y">bullet.Y</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="1514085634868674" type="enemy01" />
+                                        <action id="-9" name="Destroy" sid="4281598148071817" type="bullet" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2984941808123615">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3586996762258151" type="System">
+                                            <param id="0" name="Variable">explosionPicker</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="262737088591311" type="System">
+                                            <param id="0" name="Object to create">bulletExplosion4</param>
+                                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                            <param id="2" name="X">bullet.X</param>
+                                            <param id="3" name="Y">bullet.Y</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="6876101108983374" type="enemy01" />
+                                        <action id="-9" name="Destroy" sid="3736039374222672" type="bullet" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8277405701799577">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="6921946249107551" type="System">
+                                            <param id="0" name="Variable">explosionPicker</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="2786933599409884" type="System">
+                                            <param id="0" name="Object to create">bulletExplosion5</param>
+                                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                                            <param id="2" name="X">bullet.X</param>
+                                            <param id="3" name="Y">bullet.Y</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="9935094235584941" type="enemy01" />
+                                        <action id="-9" name="Destroy" sid="3772011652209015" type="bullet" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="8963544452048413">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5117973889170536" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2088468387713578" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="776422034602602">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="518622997112212" type="megaton">
+                    <param id="0" name="Object">enemy01</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="357198050708445" type="Audio">
+                    <param id="0" name="Audio file">explosion</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="514646255673022" type="System">
+                    <param id="0" name="Variable">enemyInterval</param>
+                    <param id="1" name="Value">(enemyInterval/150)</param>
+                </action>
+                <action id="-10" name="Add to" sid="639429875709667" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">10+floor(score/50)+enemy01.survivalCounter*5</param>
+                </action>
+                <action id="-9" name="Set value" sid="780193970275246" type="System">
+                    <param id="0" name="Variable">explosionPicker</param>
+                    <param id="1" name="Value">int(random(5))</param>
+                </action>
+                <action id="-3" name="Create object" sid="182716380672244" type="System">
+                    <param id="0" name="Object to create">EMP</param>
+                    <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                    <param id="2" name="X">enemy01.X</param>
+                    <param id="3" name="Y">enemy01.Y</param>
+                </action>
+                <action id="6" name="Set speed" sid="635532236960790" type="EMP">
+                    <param id="0" name="Speed">22+int(random(40))</param>
+                </action>
+                <action id="9" name="Set scale" sid="399019181670570" type="EMP">
+                    <param id="0" name="Scale">1+random(2)</param>
+                </action>
+                <action id="-8" name="Set angle" sid="770177260923783" type="EMP">
+                    <param id="0" name="Angle">int(random(360))</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="847951331276891">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="783582436915513" type="System">
+                            <param id="0" name="Variable">explosionPicker</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="632383422702359" type="System">
+                            <param id="0" name="Object to create">bulletExplosion</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">enemy01.X</param>
+                            <param id="3" name="Y">enemy01.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="927854225080076" type="enemy01" />
+                    </actions>
+                </event-block>
+                <event-block sid="344672643969327">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="269208489135516" type="System">
+                            <param id="0" name="Variable">explosionPicker</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="848217369108289" type="System">
+                            <param id="0" name="Object to create">bulletExplosion2</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">enemy01.X</param>
+                            <param id="3" name="Y">enemy01.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="110753405479100" type="enemy01" />
+                    </actions>
+                </event-block>
+                <event-block sid="236695287536856">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="548935535782750" type="System">
+                            <param id="0" name="Variable">explosionPicker</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="812661842301772" type="System">
+                            <param id="0" name="Object to create">bulletExplosion3</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">enemy01.X</param>
+                            <param id="3" name="Y">enemy01.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="990168314897227" type="enemy01" />
+                    </actions>
+                </event-block>
+                <event-block sid="855071797154143">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="106123572917940" type="System">
+                            <param id="0" name="Variable">explosionPicker</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="744042713096122" type="System">
+                            <param id="0" name="Object to create">bulletExplosion4</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">enemy01.X</param>
+                            <param id="3" name="Y">enemy01.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="528720903063538" type="enemy01" />
+                    </actions>
+                </event-block>
+                <event-block sid="761530998553288">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="796620475178694" type="System">
+                            <param id="0" name="Variable">explosionPicker</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="414441825989227" type="System">
+                            <param id="0" name="Object to create">bulletExplosion5</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;player&quot;)</param>
+                            <param id="2" name="X">enemy01.X</param>
+                            <param id="3" name="Y">enemy01.Y</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="828065964383103" type="enemy01" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

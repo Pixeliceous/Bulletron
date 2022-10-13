@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>gameSheet</name>
+    <events>
+        <variable constant="0" name="empcount" sid="970843504204521" static="0" type="number">3</variable>
+        <variable constant="0" name="megatonLifecycle" sid="917990443114693" static="0" type="number">0</variable>
+        <variable constant="0" name="megatonActive" sid="432047078105094" static="0" type="number">0</variable>
+        <variable constant="0" name="shieldblipper" sid="268650448629686" static="0" type="number">0</variable>
+        <variable constant="0" name="autoShield" sid="702461692017190" static="0" type="number">0</variable>
+        <variable constant="0" name="shieldActive" sid="984530417552696" static="0" type="number">0</variable>
+        <variable constant="0" name="autoShooter" sid="831458810314942" static="0" type="number">0</variable>
+        <variable constant="0" name="shootSound" sid="6444174864888335" static="0" type="number">0</variable>
+        <variable constant="0" name="explosionPicker" sid="2700743049144351" static="0" type="number">0</variable>
+        <variable constant="0" name="enemySpeedVar" sid="8528056833957794" static="0" type="number">0</variable>
+        <variable constant="0" name="lives" sid="7563023432677" static="0" type="number">3</variable>
+        <variable constant="0" name="score" sid="9839945607928309" static="0" type="number">0</variable>
+        <variable constant="0" name="enemyDistanceX" sid="4869347305461643" static="0" type="number">600</variable>
+        <variable constant="0" name="enemyDistanceY" sid="6193728108198132" static="0" type="number">340</variable>
+        <variable constant="0" name="enemyY" sid="4490310559989737" static="0" type="number">0</variable>
+        <variable constant="0" name="enemyX" sid="8891779026283427" static="0" type="number">0</variable>
+        <variable constant="0" name="deathTimeout" sid="6869510552817439" static="0" type="number">0</variable>
+        <variable constant="0" name="remindY" sid="8309436467821038" static="0" type="number">0</variable>
+        <variable constant="0" name="remindX" sid="8010756675377581" static="0" type="number">0</variable>
+        <variable constant="0" name="enemySpeed" sid="7968158205433961" static="0" type="number">3</variable>
+        <variable constant="0" name="enemyInterval" sid="2390911144355696" static="0" type="number">1</variable>
+        <variable constant="0" name="bulletSpeed" sid="1257525047807811" static="0" type="number">10</variable>
+        <variable constant="1" name="NORTH" sid="4891872042106648" static="0" type="number">0</variable>
+        <variable constant="1" name="EAST" sid="9528463328204963" static="0" type="number">1</variable>
+        <variable constant="1" name="SOUTH" sid="30177980201531" static="0" type="number">2</variable>
+        <variable constant="1" name="WEST" sid="9715204528040986" static="0" type="number">3</variable>
+        <event-block sid="5358753651101441">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1343408835082958" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2596670467147628" type="Audio">
+                    <param id="0" name="Audio file">gameloop</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-30</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="550708624142515" type="System">
+                    <param id="0" name="Variable">empcount</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1730707184633593">
+                    <conditions>
+                        <condition id="-10" name="For" sid="8675987123655747" type="System">
+                            <param id="0" name="Name">&quot;livecounter&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">lives-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5562818617400774" type="System">
+                            <param id="0" name="Object to create">livesCounter</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;overlay&quot;)</param>
+                            <param id="2" name="X">LayoutWidth-(loopindex(&quot;livecounter&quot;)*45)-110</param>
+                            <param id="3" name="Y">80</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="950529201067597">
+                    <conditions>
+                        <condition id="-10" name="For" sid="873784465345647" type="System">
+                            <param id="0" name="Name">&quot;empcounter&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">empcount-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="320964553403729" type="System">
+                            <param id="0" name="Object to create">empmarker</param>
+                            <param id="1" name="Layer">LayerIndex(&quot;overlay&quot;)</param>
+                            <param id="2" name="X">LayoutWidth-(loopindex(&quot;empcounter&quot;)*45)-110</param>
+                            <param id="3" name="Y">220</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5618146181537599">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4996634541359513" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7081318357969038" type="scoreCounter">
+                    <param id="0" name="Text">score</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="197971756199345">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="391743168933818" type="System">
+                            <param id="0" name="Variable">autoShooter</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="283302675977489" type="System">
+                            <param id="0" name="Variable">autoShooter</param>
+                            <param id="1" name="Value">autoShooter-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="168996838914458">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="393449080159380" type="System">
+                            <param id="0" name="Variable">autoShield</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="790009007527523" type="System">
+                            <param id="0" name="Variable">autoShield</param>
+                            <param id="1" name="Value">autoShield-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5397512660715126">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2734886777351445" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="9020906926367872" type="gameBackground">
+                            <param id="0" name="X">0-(player.X/5)</param>
+                            <param id="1" name="Y">0-(player.Y/5)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4472760095510354" type="planetBackground">
+                            <param id="0" name="X">0-(player.X/2.2)</param>
+                            <param id="1" name="Y">0-(player.Y/2.2)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2894457140210877" type="starField1">
+                            <param id="0" name="X">0-(player.X/4)</param>
+                            <param id="1" name="Y">0-(player.Y/4)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="9668219611784709" type="starField2">
+                            <param id="0" name="X">(0-(player.X/3.4))</param>
+                            <param id="1" name="Y">(0-(player.Y/3.4))</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="620177117026652" type="starField3">
+                            <param id="0" name="X">(0-(player.X/2.8))</param>
+                            <param id="1" name="Y">(0-(player.Y/2.8))</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="285782990817512" type="subPlanet">
+                            <param id="0" name="X">0-(player.X/1.7)</param>
+                            <param id="1" name="Y">0-(player.Y/1.7)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="543669074772224">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="560425898133456" type="System">
+                                    <param id="0" name="Object">powerup_bullettime</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Rotate clockwise" sid="270787210159278" type="bullettime_starflare01">
+                                    <param id="0" name="Degrees">10</param>
+                                </action>
+                                <action id="-19" name="Rotate counter-clockwise" sid="709090310625861" type="bullettime_starflare02">
+                                    <param id="0" name="Degrees">15</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="632579434885523" type="bullettime_starflare01">
+                                    <param id="0" name="X">powerup_bullettime.X</param>
+                                    <param id="1" name="Y">powerup_bullettime.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="262638267168382" type="bullettime_starflare02">
+                                    <param id="0" name="X">powerup_bullettime.X</param>
+                                    <param id="1" name="Y">powerup_bullettime.Y</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="155738657346127" type="powerup_bullettime">
+                                    <param id="0" name="X">self.X+2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="991342619145139">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="900173677213521" type="System">
+                                    <param id="0" name="Object">powerup_shield</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Rotate clockwise" sid="451874202092164" type="shield_starflare01">
+                                    <param id="0" name="Degrees">10</param>
+                                </action>
+                                <action id="-19" name="Rotate counter-clockwise" sid="160680002049441" type="shield_starflare02">
+                                    <param id="0" name="Degrees">15</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="973899493736799" type="shield_starflare01">
+                                    <param id="0" name="X">powerup_shield.X</param>
+                                    <param id="1" name="Y">powerup_shield.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="977984703204168" type="shield_starflare02">
+                                    <param id="0" name="X">powerup_shield.X</param>
+                                    <param id="1" name="Y">powerup_shield.Y</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="491344996319946" type="powerup_shield">
+                                    <param id="0" name="X">self.X-3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="935820219709402">
+                            <conditions>
+                                <condition id="-24" name="For Each (ordered)" sid="155663134064244" type="System">
+                                    <param id="0" name="Object">powerup_emp</param>
+                                    <param id="1" name="Expression">0</param>
+                                    <param id="2" name="Order">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Rotate clockwise" sid="837142659886232" type="emp_starflare01">
+                                    <param id="0" name="Degrees">10</param>
+                                </action>
+                                <action id="-19" name="Rotate counter-clockwise" sid="729922512178117" type="emp_starflare02">
+                                    <param id="0" name="Degrees">15</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="355740356173631" type="emp_starflare01">
+                                    <param id="0" name="X">powerup_emp.X</param>
+                                    <param id="1" name="Y">powerup_emp.Y</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="695080864640314" type="emp_starflare02">
+                                    <param id="0" name="X">powerup_emp.X</param>
+                                    <param id="1" name="Y">powerup_emp.Y</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="831760427631558" type="powerup_emp">
+                                    <param id="0" name="Y">self.Y-3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="607918424388394">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="718848865055258" type="System">
+                                    <param id="0" name="Variable">shieldActive</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="471943924981307" type="shield">
+                                    <param id="0" name="X">player.X</param>
+                                    <param id="1" name="Y">player.Y</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="814956168677381" type="shield">
+                                    <param id="0" name="Degrees">8</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4367301381905816">
+                    <conditions>
+                        <condition id="-24" name="For Each (ordered)" sid="2447722847756917" type="System">
+                            <param id="0" name="Object">enemy01</param>
+                            <param id="1" name="Expression">0</param>
+                            <param id="2" name="Order">0</param>
+                        </condition>
+                        <condition id="-3" name="Is on-screen" sid="7051863262771893" type="enemy01" />
+                        <condition id="-14" name="Compare variable" sid="1137169996978452" type="System">
+                            <param id="0" name="Variable">deathTimeout</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7406074700056416" type="enemy01" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <include>bullets</include>
+        <include>keyboard</include>
+        <include>playerDeath</include>
+        <include>enemies</include>
+        <include>viewport</include>
+        <include>powerups</include>
+    </events>
+</c2eventsheet>

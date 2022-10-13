@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>mainMenuSheet</name>
+    <events>
+        <event-block sid="1035299407006843">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5666640552805002" type="System" />
+            </conditions>
+            <actions>
+                <action id="9" name="Preload (by name)" sid="573061947177757" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">&quot;mainmenu&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="2774422424095884" type="Audio">
+                    <param id="0" name="Audio file">mainmenu</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-20</param>
+                    <param id="1" name="Tag (optional)">&quot;mainMenuMusic&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="9973750428265396">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="510252598975476" type="Keyboard">
+                    <param id="0" name="Key">13 (Return)</param>
+                </condition>
+                <condition id="6" name="On object clicked" sid="244103105157724" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">startButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="9160810101267743" type="Audio">
+                    <param id="0" name="Tag">&quot;mainMenuMusic&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="2358883541678817" type="System">
+                    <param id="0" name="Layout">gameLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="911654691374858">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="898580013861370" type="Mouse">
+                    <param id="0" name="Object">startButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="9" name="Set scale" sid="119682323738152" type="startButton">
+                    <param id="0" name="Scale">1.1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="301534586824000">
+            <conditions>
+                <condition id="-22" name="Else" sid="869807218768008" type="System" />
+            </conditions>
+            <actions>
+                <action id="9" name="Set scale" sid="283248596419671" type="startButton">
+                    <param id="0" name="Scale">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="109977875271175">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="686175974104922" type="System" />
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="459773584446855" type="player">
+                    <param id="0" name="Degrees">0.2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="687201364597957">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="639355940716367" type="Keyboard">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Close" sid="891454668678546" type="Browser" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

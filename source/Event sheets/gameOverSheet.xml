@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>gameOverSheet</name>
+    <events>
+        <event-block sid="3393423390839242">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7263931206280414" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="1557903689712918" type="scoreCounter">
+                    <param id="0" name="Text">score</param>
+                </action>
+                <action id="0" name="Submit score" sid="8505816801166255" type="ScirraArcade">
+                    <param id="0" name="Leaderboard ID">&quot;bulletronScore&quot;</param>
+                    <param id="1" name="Score">score</param>
+                </action>
+                <action id="0" name="Play" sid="265902168560698" type="Audio">
+                    <param id="0" name="Audio file">endgame</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;endgame&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6588102659286697">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="9617320081116868" type="Keyboard">
+                    <param id="0" name="Key">13 (Return)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="843297447390013" type="Audio">
+                    <param id="0" name="Tag">&quot;endgame&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="6845245733678571" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="7384448972761301" type="System">
+                    <param id="0" name="Variable">enemyInterval</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="9743618251807" type="System">
+                    <param id="0" name="Variable">enemyX</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1453857744612819" type="System">
+                    <param id="0" name="Variable">enemyY</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="7944164621040276" type="System">
+                    <param id="0" name="Variable">lives</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="7356448636928243" type="System">
+                    <param id="0" name="Layout">mainMenuLayout</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
